@@ -14,9 +14,6 @@ import { AvForm, AvField } from "availity-reactstrap-validation"
 // actions
 import { loginUser, apiError } from "../../store/actions"
 
-// import images
-import logoSm from "../../assets/images/logo-sm.png"
-
 const Login = props => {
   // handleValidSubmit
   const handleValidSubmit = (event, values) => {
@@ -38,18 +35,6 @@ const Login = props => {
           <Row className="justify-content-center">
             <Col md={8} lg={6} xl={4}>
               <Card className="overflow-hidden">
-                <div className="bg-primary">
-                  <div className="text-primary text-center p-4">
-                    <h5 className="text-white font-size-20">Welcome Back !</h5>
-                    <p className="text-white-50">
-                      Sign in to continue to admin dashboard.
-                    </p>
-                    <Link to="/" className="logo logo-admin">
-                      <img src={logoSm} height="24" alt="logo" />
-                    </Link>
-                  </div>
-                </div>
-
                 <CardBody className="p-4">
                   <div className="p-3">
                     <AvForm

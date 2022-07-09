@@ -8,9 +8,6 @@ import { withTranslation } from "react-i18next"
 import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
 
-// users
-import user1 from "../../../assets/images/users/user-4.jpg"
-
 const ProfileMenu = props => {
   // Declare a new state variable, which we'll call "menu"
   const [menu, setMenu] = useState(false)
