@@ -13,6 +13,13 @@ import Swal from "sweetalert2"
 const UserAddress = () => {
   const dispatch = useDispatch()
   const stockEntry = useSelector(state => state.stockEntry)
+  const { Vendor } = useSelector(state => state)
+  const { vendors } = Vendor
+
+  const findVendorName = series => {
+    const vendor = vendors.find(vendor => vendor.series == series)
+    return vendor ? vendor.name : ""
+  }
 
   const { isLoading, listStockEntries } = stockEntry
   useEffect(() => {
@@ -95,6 +102,8 @@ const UserAddress = () => {
                               <th>Remarks</th>
                               <th>stock level</th>
                               <th>items</th>
+                              <th>Vendor name</th>
+                              <th>Posting Date</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -113,6 +122,8 @@ const UserAddress = () => {
                                       </div>
                                     ))}
                                   </td>
+                                  <td>{findVendorName(stock.vendor_id)}</td>
+                                  <td>{stock.postingDate}</td>
                                   <td>
                                     <Button
                                       color="danger"
